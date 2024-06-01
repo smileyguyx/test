@@ -12,8 +12,10 @@ const port = process.env.PORT || 3000;
 
 const http = require('http');
 
-const server = http.createServer(...);
-server.listen(port);
+http.createServer(function (req, res) {
+    res.write('Hello World!');
+    res.end(); 
+}).listen(port);
 
 
 sockserver.on('connection', ws => {
